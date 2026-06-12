@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velkommen Viki!</title>
+    <link rel="stylesheet" href="/main.css">
 </head>
+<script>
+setInterval(() => {
+    const body = document.body;
+
+    // trigger glitch effect randomly
+    body.classList.add("glitch");
+
+    setTimeout(() => {
+        body.classList.remove("glitch");
+    }, 600);
+
+}, 18000); // matches animation cycle
+</script>
 <body>
     <h1>Velkommen til Viki sitt rike!</h1>
+
+    <img src="/img/viki-i-robot.jpg" alt="VIKI" class="viki-image">
 
     <h2>Pool: 6</h2>
 
@@ -60,7 +76,7 @@
     <ul>
         <li>Ikke sett deg ved vinduene, du blir blind av solen. Jeg lover.</li>
         <li>Ikke ha mat og drikke på pulten, Geir er veldig streng på akkurat det.</li>
-        <li>Unngå å bruke AI til å skrive koden din for deg, det er veldig merkbart.</li>
+        <li>Unngå å bruke AI til å skrive koden din for deg, det er veldig merkbart. Vi ignorerer AI-bruken på css til denne siden.</li>
         <li>Still Geir masse spørsmål, han liker det veldig godt.</li>
         <li>Følg med på all lore Geir plutselig dropper om seg selv. Han har gjort masse spennende.</li>
     </ul>

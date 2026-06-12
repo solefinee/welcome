@@ -1,0 +1,204 @@
+/* Import futuristic font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #0f1f33 0%, #05080f 70%);
+    color: #d8f6ff;
+    padding: 40px;
+    overflow-x: hidden;
+}
+
+/* AI Glow Headings */
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #8deeff;
+    text-shadow:
+        0 0 10px #00cfff,
+        0 0 20px #00cfff,
+        0 0 40px #00cfff;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #b5f7ff;
+}
+
+h3 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #7be7ff;
+}
+
+/* VIKI image animation */
+
+.viki-image {
+    position: fixed;
+    width: 280px;
+    z-index: 9999;
+    pointer-events: none;
+
+    opacity: 0;
+
+    animation: vikiJumpscare 18s infinite;
+}
+
+@keyframes vikiJumpscare {
+
+    /* hidden most of the time */
+    0%, 78%, 100% {
+        opacity: 0;
+        transform: translate(-200px, -200px) scale(0.5);
+    }
+
+    /* sudden top-left appearance */
+    80% {
+        opacity: 1;
+        top: 20px;
+        left: 20px;
+        transform: rotate(-10deg) scale(1.2);
+    }
+
+    /* flicker */
+    82% {
+        opacity: 0;
+    }
+
+    /* bottom-right appearance */
+    84% {
+        opacity: 1;
+        bottom: 20px;
+        right: 20px;
+        top: auto;
+        left: auto;
+        transform: rotate(12deg) scale(1.3);
+    }
+
+    /* flicker again */
+    86% {
+        opacity: 0;
+    }
+
+    /* full jumpscare center */
+    88% {
+        opacity: 1;
+        top: 50%;
+        left: 50%;
+        transform:
+            translate(-50%, -50%)
+            scale(2.5)
+            rotate(0deg);
+        filter: brightness(2) contrast(1.5);
+    }
+
+    /* disappear */
+    92% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Futuristic panels */
+
+table,
+ul,
+p {
+    backdrop-filter: blur(10px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.3);
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.15);
+}
+
+thead {
+    background: rgba(0,255,255,0.15);
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,255,255,0.15);
+}
+
+tr:hover {
+    background: rgba(0,255,255,0.08);
+    transition: 0.3s;
+}
+
+p,
+ul {
+    background: rgba(255,255,255,0.04);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(0,255,255,0.2);
+    margin-bottom: 20px;
+    box-shadow:
+        0 0 15px rgba(0,255,255,0.08);
+}
+
+li {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Subtle AI scan effect */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            transparent 0px,
+            transparent 3px,
+            rgba(0,255,255,0.03) 4px
+        );
+
+    animation: scanMove 12s linear infinite;
+}
+
+@keyframes scanMove {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}
+
+.glitch {
+    animation: glitchFlash 0.2s 3;
+}
+
+@keyframes glitchFlash {
+    0% { filter: none; }
+    25% { filter: invert(1); }
+    50% { filter: hue-rotate(180deg); }
+    75% { filter: contrast(200%); }
+    100% { filter: none; }
+}

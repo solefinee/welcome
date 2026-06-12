@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velkommen Viki!</title>
+    <link rel="stylesheet" href="/main.css">
 </head>
+<script>
+setInterval(() => {
+    const body = document.body;
+
+    // trigger glitch effect randomly
+    body.classList.add("glitch");
+
+    setTimeout(() => {
+        body.classList.remove("glitch");
+    }, 600);
+
+}, 18000); // matches animation cycle
+</script>
 <body>
     <h1>404</h1>
+    <img src="/img/viki-i-robot.jpg" alt="VIKI" class="viki-image">
 </body>
 </html>
